@@ -1,0 +1,7 @@
+[wsl2]
+memory=2GB
+processors=2
+swap=4GB
+swapFile=C:\\Users\\dvchevskii\\wsl2\\tmp\\swap.vhdx
+localhostForwarding=true
+pageReporting=true

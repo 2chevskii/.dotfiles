@@ -1,0 +1,61 @@
+[user]
+  name = <username>
+  email = <email>
+[core]
+  editor = code --wait
+  autocrlf = false
+  eol = lf
+  quotePath = false
+[init]
+  defaultBranch = master
+[diff]
+  tool = vscode
+[merge]
+  tool = vscode
+[fetch]
+  prune = true
+[pull]
+  rebase = true
+[http]
+  sslBackend = openssl
+# credentials
+[credential]
+  helper = manager-core
+[credential "https://gitlab.com"]
+  provider = generic
+[credential "https://dev.azure.com"]
+  useHttpPath = true
+# diff/merge tools
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+# aliases
+[alias]
+  s = status
+  ll = log --oneline
+  la = log --all
+  lla = log --all --oneline
+  lg = log --graph
+  llg = log --graph --oneline
+  lga = log --graph --all
+  llga = log --graph --all --oneline
+  last = log --stat -1
+  cm = commit
+  remotes = remote -v
+  b = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+  br = branch -l
+  bra = branch -la
+  bname = rev-parse --abbrev-ref HEAD
+  sw = switch
+  c = checkout
+  del = branch -d
+  delf = branch -D
+  st = stash push
+  stp = stash pop
+  rs = reset
+  undo = reset HEAD~1 --mixed
+  f = fetch
+  done = push origin HEAD
+  m = merge
+  list-alias = config --get-regexp alias
